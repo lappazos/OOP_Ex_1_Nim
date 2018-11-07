@@ -1,0 +1,44 @@
+lioraryepaz
+
+=============================
+=  File description - EX1   =
+=============================
+Board.java - contains the Board game implementation
+Competition.java - main class, in charge of running the game.
+Move.java - represents a single move a player is doing.
+Player.java - contains the Player class, with different kinds of players implementation.
+
+
+
+=============================
+=          Design           =
+=============================
+The Competition class runs and in charge the entire game - a single object for the hall game.
+a Board is being used for every round, meaning every new round a new Board object is being created.
+2 Players objects are also created at the begining of the game, and stay along until the game ends.
+
+The flow between the different classes works as the following:
+Competition object asks in every turn the player object to perform a move;
+Player creates a move object;
+Player transfer it to the Competition object;
+Competition pass it to the Board using markSequence method.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+the random player randomly try to choose rows, sticks, and bounds (only if they are unmarked of course)
+all of the printing are being done throughout a specific method
+in the initiation of the game a check is being done wether or not a human player has been chosen,
+and only if so activate the message switch.
+
+
+=============================
+=    Answers to questions   =
+=============================
+
+1) The smart  player check every time whether an odd or an even number of unMarked sticks has left.
+the reason for that is that in the final move we would like to leave only 1 stick for the opposite player - then he
+would have to take it and we will win.
+so, according to his check, he takes out 1 or 2 sticks to always leave an odd number to his opponent.
